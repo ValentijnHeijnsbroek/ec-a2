@@ -1,0 +1,53 @@
+success = best robot within 0.2 m of the target
+final distance in m, sims = simulations, iqr = 25th-75th percentile
+annealed_mutation: mean 0.241, std 0.231, median 0.184, iqr 0.054-0.407, min 0.000, max 0.720, success 11/20, sims to success (successful runs only) mean 2721 median 2585, last improvement gen 287
+self_adaptive: mean 0.224, std 0.194, median 0.182, iqr 0.076-0.357, min 0.003, max 0.606, success 11/20, sims to success (successful runs only) mean 1747 median 970, last improvement gen 232
+fixed_mutation: mean 0.300, std 0.203, median 0.229, iqr 0.140-0.516, min 0.002, max 0.613, success 8/20, sims to success (successful runs only) mean 1906 median 1606, last improvement gen 216
+random_search: mean 0.598, std 0.042, median 0.605, iqr 0.563-0.617, min 0.504, max 0.665, success 0/20, sims to success (successful runs only) mean nan median nan, last improvement gen 134
+best distance in generation 0 (all runs): mean 0.859, min 0.747, max 0.944
+
+annealed_mutation: success at 0.1 m 7/20, 0.2 m 11/20, 0.3 m 14/20
+self_adaptive: success at 0.1 m 7/20, 0.2 m 11/20, 0.3 m 14/20
+fixed_mutation: success at 0.1 m 3/20, 0.2 m 8/20, 0.3 m 11/20
+random_search: success at 0.1 m 0/20, 0.2 m 0/20, 0.3 m 0/20
+
+annealed_mutation: still improving in last 50 gens 18/20 runs, mean gain 2.2 cm
+self_adaptive: still improving in last 50 gens 10/20 runs, mean gain 0.7 cm
+fixed_mutation: still improving in last 50 gens 9/20 runs, mean gain 0.7 cm
+random_search: still improving in last 50 gens 2/20 runs, mean gain 0.6 cm
+
+tests: 10, holm corrected, a12 = chance that the first one is better, with 95% bootstrap interval
+final distance annealed_mutation vs self_adaptive: Mann-Whitney U, stat 199.0, p 9.89e-01, holm p 1.00e+00, a12 0.50 (0.33-0.69)
+final distance annealed_mutation vs fixed_mutation: Mann-Whitney U, stat 164.0, p 3.37e-01, holm p 1.00e+00, a12 0.59 (0.41-0.77)
+final distance self_adaptive vs fixed_mutation: Mann-Whitney U, stat 157.0, p 2.50e-01, holm p 1.00e+00, a12 0.61 (0.42-0.78)
+final distance annealed_mutation vs random_search: Mann-Whitney U, stat 46.0, p 3.29e-05, holm p 2.63e-04, a12 0.89 (0.73-1.00)
+final distance self_adaptive vs random_search: Mann-Whitney U, stat 17.0, p 7.95e-07, holm p 7.95e-06, a12 0.96 (0.89-1.00)
+final distance fixed_mutation vs random_search: Mann-Whitney U, stat 24.0, p 2.06e-06, holm p 1.86e-05, a12 0.94 (0.85-1.00)
+simulations to success annealed_mutation vs self_adaptive: Mann-Whitney U, stat 222.0, p 5.42e-01, holm p 1.00e+00, a12 0.45 (0.28-0.62)
+simulations to success annealed_mutation vs fixed_mutation: Mann-Whitney U, stat 184.0, p 6.50e-01, holm p 1.00e+00, a12 0.54 (0.37-0.71)
+simulations to success self_adaptive vs fixed_mutation: Mann-Whitney U, stat 167.0, p 3.42e-01, holm p 1.00e+00, a12 0.58 (0.42-0.74)
+success rate annealed_mutation vs self_adaptive: Fisher exact, stat 1.0, p 1.00e+00, holm p 1.00e+00, a12 nan (nan-nan)
+
+paired check (wilcoxon signed-rank on final distance, runs paired by seed, not holm corrected)
+annealed_mutation vs self_adaptive: p 9.27e-01, annealed_mutation closer in 10/20 seeds
+annealed_mutation vs fixed_mutation: p 2.77e-01, annealed_mutation closer in 13/20 seeds
+self_adaptive vs fixed_mutation: p 1.77e-01, self_adaptive closer in 13/20 seeds
+
+annealed_mutation: sigma at gen 0/50/150/300 = 0.220/0.188/0.122/0.021, diversity at end mean 0.14 std 0.01, children better than best parent 9.8% (first half) 9.6% (second half), population mean distance at end 0.28
+self_adaptive: sigma at gen 0/50/150/300 = 0.220/0.171/0.129/0.112, diversity at end mean 0.68 std 0.34, children better than best parent 9.8% (first half) 9.0% (second half), population mean distance at end 0.44
+fixed_mutation: sigma at gen 0/50/150/300 = 0.120/0.120/0.120/0.120, diversity at end mean 0.75 std 0.05, children better than best parent 10.1% (first half) 8.6% (second half), population mean distance at end 0.50
+self_adaptive sigma at end per run: 0.050, 0.151, 0.099, 0.186, 0.162, 0.173, 0.126, 0.040, 0.090, 0.038, 0.145, 0.108, 0.155, 0.122, 0.147, 0.069, 0.042, 0.049, 0.062, 0.232
+self_adaptive sigma std inside one population at end: min 0.003, max 0.019
+spearman sigma at end vs final distance: r -0.22, p 3.46e-01
+
+replay of best robot per run: 10 s, start (0.00, 0.07), target (1, 0), angle 0 = straight at the target
+annealed_mutation: unsuccessful 9/20, distance from start mean 0.57 m, angle to target direction mean 8 deg, walked past the target 0
+self_adaptive: unsuccessful 9/20, distance from start mean 0.62 m, angle to target direction mean 7 deg, walked past the target 0
+fixed_mutation: unsuccessful 12/20, distance from start mean 0.58 m, angle to target direction mean 6 deg, walked past the target 0
+random_search: unsuccessful 20/20, distance from start mean 0.45 m, angle to target direction mean 15 deg, walked past the target 0
+largest difference replay vs logged fitness: 0.00e+00 m
+
+successful runs, replayed: distance to target 1 s before the end, and x at the end when the network is told the target is at 2 m
+annealed_mutation: 11 runs, distance 1 s before end mean 0.19 m, x at end mean 0.93 (target told at 1 m) vs 0.22 (told at 2 m), max x when told 2 m 0.57
+self_adaptive: 11 runs, distance 1 s before end mean 0.19 m, x at end mean 0.93 (target told at 1 m) vs 0.27 (told at 2 m), max x when told 2 m 0.63
+fixed_mutation: 8 runs, distance 1 s before end mean 0.21 m, x at end mean 0.91 (target told at 1 m) vs 0.21 (told at 2 m), max x when told 2 m 0.42

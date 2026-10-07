@@ -1,0 +1,11 @@
+comparison,test,statistic,p_value,p_holm,a12,a12_low,a12_high
+final distance annealed_mutation vs self_adaptive,Mann-Whitney U,199.000,9.892e-01,1.000e+00,0.502,0.328,0.685
+final distance annealed_mutation vs fixed_mutation,Mann-Whitney U,164.000,3.369e-01,1.000e+00,0.590,0.407,0.767
+final distance self_adaptive vs fixed_mutation,Mann-Whitney U,157.000,2.503e-01,1.000e+00,0.608,0.425,0.782
+final distance annealed_mutation vs random_search,Mann-Whitney U,46.000,3.293e-05,2.634e-04,0.885,0.733,1.000
+final distance self_adaptive vs random_search,Mann-Whitney U,17.000,7.948e-07,7.948e-06,0.958,0.885,1.000
+final distance fixed_mutation vs random_search,Mann-Whitney U,24.000,2.062e-06,1.855e-05,0.940,0.848,0.998
+simulations to success annealed_mutation vs self_adaptive,Mann-Whitney U,222.000,5.418e-01,1.000e+00,0.445,0.276,0.616
+simulations to success annealed_mutation vs fixed_mutation,Mann-Whitney U,184.000,6.503e-01,1.000e+00,0.540,0.367,0.710
+simulations to success self_adaptive vs fixed_mutation,Mann-Whitney U,167.000,3.419e-01,1.000e+00,0.583,0.421,0.743
+success rate annealed_mutation vs self_adaptive,Fisher exact,1.000,1.000e+00,1.000e+00,nan,nan,nan
