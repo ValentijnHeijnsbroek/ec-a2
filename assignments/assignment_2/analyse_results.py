@@ -250,6 +250,31 @@ def main():
             f"{np.mean(better[:, half:]) * 100:.1f}% (second half), "
             f"population mean distance at end {column(runs[variant], 'mean')[:, -1].mean():.2f}"
         )
+    #how fast the population loses its spread, early and later in the run
+    early = [g for g in (0, 10, 50, len(generations) // 2, len(generations) - 1) if g < len(generations)]
+    for variant in [v for v in variants if v != "random_search"]:
+        diversity = column(runs[variant], "diversity")
+        lines.append(
+            f"{variant}: diversity at gen {'/'.join(str(generations[g]) for g in early)} = "
+            + "/".join(f"{diversity[:, g].mean():.2f}" for g in early)
+        )
+    #the middle of the run: best distance so far, mean and median
+    middle = [g for g in (50, 100, 150) if g < len(generations)]
+    for variant in variants:
+        lines.append(
+            f"{variant}: best at gen {'/'.join(str(generations[g]) for g in middle)}, mean "
+            + "/".join(f"{best[variant][:, g].mean():.3f}" for g in middle)
+            + ", median "
+            + "/".join(f"{np.median(best[variant][:, g]):.3f}" for g in middle)
+        )
+    #runs that were not yet within SUCCESS_DISTANCE half way, but got there by the end
+    for variant in variants:
+        halfway = best[variant][:, len(generations) // 2]
+        late = int(np.sum((halfway > SUCCESS_DISTANCE) & (final[variant] <= SUCCESS_DISTANCE)))
+        lines.append(
+            f"{variant}: not successful at gen {generations[len(generations) // 2]} {int(np.sum(halfway > SUCCESS_DISTANCE))}/{len(halfway)}, "
+            f"of these successful at the end {late}"
+        )
     if "self_adaptive" in runs:
         sigma_end = column(runs["self_adaptive"], "sigma_mean")[:, -1]
         result = stats.spearmanr(sigma_end, final["self_adaptive"])

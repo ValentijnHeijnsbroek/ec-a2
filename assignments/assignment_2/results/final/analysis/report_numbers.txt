@@ -36,6 +36,17 @@ self_adaptive vs fixed_mutation: p 1.77e-01, self_adaptive closer in 13/20 seeds
 annealed_mutation: sigma at gen 0/50/150/300 = 0.220/0.188/0.122/0.021, diversity at end mean 0.14 std 0.01, children better than best parent 9.8% (first half) 9.6% (second half), population mean distance at end 0.28
 self_adaptive: sigma at gen 0/50/150/300 = 0.220/0.171/0.129/0.112, diversity at end mean 0.68 std 0.34, children better than best parent 9.8% (first half) 9.0% (second half), population mean distance at end 0.44
 fixed_mutation: sigma at gen 0/50/150/300 = 0.120/0.120/0.120/0.120, diversity at end mean 0.75 std 0.05, children better than best parent 10.1% (first half) 8.6% (second half), population mean distance at end 0.50
+annealed_mutation: diversity at gen 0/10/50/150/300 = 6.86/1.67/1.16/0.77/0.14
+self_adaptive: diversity at gen 0/10/50/150/300 = 6.86/1.51/1.09/0.80/0.68
+fixed_mutation: diversity at gen 0/10/50/150/300 = 6.86/0.97/0.76/0.76/0.75
+annealed_mutation: best at gen 50/100/150, mean 0.396/0.340/0.315, median 0.353/0.279/0.273
+self_adaptive: best at gen 50/100/150, mean 0.384/0.316/0.272, median 0.429/0.350/0.294
+fixed_mutation: best at gen 50/100/150, mean 0.415/0.343/0.321, median 0.419/0.278/0.251
+random_search: best at gen 50/100/150, mean 0.658/0.646/0.632, median 0.645/0.639/0.626
+annealed_mutation: not successful at gen 150 14/20, of these successful at the end 5
+self_adaptive: not successful at gen 150 11/20, of these successful at the end 2
+fixed_mutation: not successful at gen 150 14/20, of these successful at the end 2
+random_search: not successful at gen 150 20/20, of these successful at the end 0
 self_adaptive sigma at end per run: 0.050, 0.151, 0.099, 0.186, 0.162, 0.173, 0.126, 0.040, 0.090, 0.038, 0.145, 0.108, 0.155, 0.122, 0.147, 0.069, 0.042, 0.049, 0.062, 0.232
 self_adaptive sigma std inside one population at end: min 0.003, max 0.019
 spearman sigma at end vs final distance: r -0.22, p 3.46e-01
